@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 26% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 26% 14%;
+
+    --muted: 210 16% 93%;
+    --muted-foreground: 215 14% 46%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 239 84% 67%;
+
+    --radius: 0.5rem;
+
+    --canvas: 0 0% 100%;
+    --canvas-shadow: 0 0% 0%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 26% 14%;
+    --sidebar-primary: 239 84% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 220 26% 14%;
+    --sidebar-border: 214 20% 90%;
+    --sidebar-ring: 239 84% 67%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+
+    --toolbar: 0 0% 100%;
+    --toolbar-foreground: 220 26% 14%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-body {
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .email-canvas-shadow {
+    box-shadow: 0 1px 3px hsl(var(--canvas-shadow) / 0.08), 0 4px 16px hsl(var(--canvas-shadow) / 0.04);
+  }
+
+  .panel-pop-in {
+    animation: panelPopIn 0.15s ease-out;
+  }
+
+  .drag-block {
+    @apply cursor-grab active:cursor-grabbing;
+  }
+}
+
+@keyframes panelPopIn {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
